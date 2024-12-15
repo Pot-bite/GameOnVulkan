@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks":[
+        {
+          "label": "window build",
+          "command":"${workspaceFolder}/build.bat",
+          "group": {
+            "kind": "build",
+            "isDefault": true
+          }
+            
+
+
+        }
+
+    ]
+}
