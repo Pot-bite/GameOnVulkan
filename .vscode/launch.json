@@ -1,0 +1,22 @@
+{
+
+
+"configurations": [
+
+ {
+"name": "${workspaceFolder}",
+"type": "node",
+"program": "${workspaceFolder}/main.exe",
+"request": "launch"
+
+ }
+
+
+
+
+
+
+
+
+]
+}
