@@ -4,19 +4,13 @@
    "configurations": [
 
    {
-"name": "Window launch",
-"type": "cppvsdbg",
-"program": "${workspaceFolder}/main.exe",
-"request": "launch",
-"cwd": "${workspaceFolder}"
+          "name": "Window launch",
+          "type": "cppvsdbg",
+          "program": "${workspaceFolder}/main.exe",
+          "request": "launch",
+          "cwd": "${workspaceFolder}"
 
    }
-
-
-
-
-
-
 
 
      ]
