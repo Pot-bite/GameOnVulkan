@@ -1,0 +1,53 @@
+{
+
+"extensions.autoUpdate":false,
+"explorer.confirmDelete": false,
+"explorer.confirmDragAndDrop": false,
+"C_Cpp.updateChannel":"Insiders",
+"workbench.editorAssociations": {
+    "*.ipynb":"jupyter-notebook"
+},
+"editor.minimap.enabled": false,
+"vim.insertModeKeysBindings":[
+    {
+        "before":[
+            "j",
+            "k"
+        ],
+        "after":[
+            "<Esc>"
+        ]
+    },
+],
+"vim.normalModeKeysBindingsNonRecursive":[
+    {
+        "before":[
+            "u"
+        ],
+        "commands":[
+            "undo"
+        ]
+    },
+    {
+        "before":[
+            "<C-r>"
+        ],
+        "commands":[
+            "redo"
+        ]
+    }
+],
+"C_Cpp.default.includePath": [
+    "${workspaceFolder}/Source",
+    "${VULKAN_SDK}/Include"
+],
+"[cpp]":{
+    "editor.wordBasedSuggestions": "off",
+    "editor.semanticHighlighting.enabled": true,
+    "editor.stickyScroll.defaultModel": "foldingProviderModel",
+    "editor.suggest.insertMode": "replace"
+}
+
+
+
+}
