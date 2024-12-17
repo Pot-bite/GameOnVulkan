@@ -3,7 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "D:/Vulkan/Include"
             ],
             "defines": [
                 "_DEBUG",
@@ -15,6 +16,7 @@
             "cppStandard": "c++17",
             "intelliSenseMode": "${default}",
             "compilerPath": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Auxiliary\\Build\\vcvars64.bat\""
+           
         }
     ],
     "version": 4

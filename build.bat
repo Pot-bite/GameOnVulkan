@@ -2,9 +2,9 @@
 
 call "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
 
-SET includes=
-SET links=
-SET defines=
+SET includes=/ISource /I%VULKAN_SDK%/Include 
+SET links=/link /LIBPATH:%VULKAN_SDK%/Lib vulkan-1.lib 
+SET defines=/D DEBUG
 
 
 cl /EHsc %includes% %defines% Source/main.cpp %links% 
