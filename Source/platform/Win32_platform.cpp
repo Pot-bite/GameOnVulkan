@@ -18,7 +18,7 @@ LRESULT CALLBACK platform_window_callback(HWND window, UINT msg, WPARAM wparam, 
 
 
 
-bool paltform_create_window(HWND window){
+bool paltform_create_windowW(HWND window){
 
     HINSTANCE Instance = GetModuleHandleA(0);
 
@@ -26,7 +26,9 @@ bool paltform_create_window(HWND window){
 
     wc.lpfnWndProc = platform_window_callback;
     wc.hInstance = Instance;
-    wc.lpszClassName = L"vulkan_engine";
+    wc.lpszClassName = TEXT("vulkan_engine");
+    
+    
 
     if(!RegisterClass(&wc)){
         MessageBoxA(window, "Failed redistering window class", "Error", MB_ICONEXCLAMATION | MB_OK);
@@ -54,7 +56,7 @@ int main(){
 
     HWND window = 0;
 
-   if(paltform_create_window(window)){
+   if(paltform_create_windowW(window)){
 
     return -1;
 
