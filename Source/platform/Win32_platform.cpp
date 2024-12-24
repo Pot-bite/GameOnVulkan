@@ -18,7 +18,7 @@ LRESULT CALLBACK platform_window_callback(HWND window, UINT msg, WPARAM wparam, 
 
 
 
-bool platform_create_windowW(HWND window){
+bool platform_create_windowW(HWND *window){
 
    
     HINSTANCE Instance = GetModuleHandleA(0);
@@ -37,20 +37,20 @@ bool platform_create_windowW(HWND window){
 
 
     if(!RegisterClass(&wc)){
-        MessageBoxA(window, "Failed redistering window class", "Error", MB_ICONEXCLAMATION | MB_OK);
+        MessageBoxA(0, "Failed redistering window class", "Error", MB_ICONEXCLAMATION | MB_OK);
         return false;
     }
 
     
-     window = CreateWindowExA(WS_EX_APPWINDOW,"vulkan_engine_class","Pong",WS_THICKFRAME|WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_OVERLAPPED,100, 100, 800, 720, 0, 0, Instance,0);
+     *window = CreateWindowExA(WS_EX_APPWINDOW,"vulkan_engine_class","Pong",WS_THICKFRAME|WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_OVERLAPPED,100, 100, 800, 720, 0, 0, Instance,0);
     
       if(window == 0){
-        MessageBoxA(window, "Could not find a window", "Error", MB_ICONEXCLAMATION | MB_OK);
+        MessageBoxA(0, "Could not find a window", "Error", MB_ICONEXCLAMATION | MB_OK);
         return false;
      }
 
     
-    ShowWindow(window,SW_SHOW);
+    ShowWindow(*window,SW_SHOW);
     
     return true;
 }
@@ -73,11 +73,11 @@ int main(){
    HWND windowW = 0; 
    VkContext vkcontext = {};
 
-   if(!platform_create_windowW(windowW)){
+   if(!platform_create_windowW(&windowW)){
       return -1;
    }
 
-   if(!vk_init(&vkcontext)){
+   if(vk_init(&vkcontext, &windowW)){
     return -1;
    }
 
@@ -86,6 +86,6 @@ int main(){
    };
 
 
-  
+    
     return 0;
 }
