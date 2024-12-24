@@ -3,10 +3,14 @@
 
 
 
+struct VkContext{
+
+ VkInstance instance;
+
+};
 
 
-
-void vk_init(){
+bool vk_init(VkContext* vkcontext){
 
    VkApplicationInfo appinfo = {};
    appinfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
@@ -17,8 +21,12 @@ void vk_init(){
    InstanceInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
    InstanceInfo.pApplicationInfo = &appinfo;
 
-   VkInstance instance = {};
 
-   VkResult result = vkCreateInstance(&InstanceInfo, 0, &instance);    
 
+   VkResult result = vkCreateInstance(&InstanceInfo, 0, &vkcontext->instance);    
+
+  if(result == VK_SUCCESS)  return true;
+
+  return false;
 }
+
